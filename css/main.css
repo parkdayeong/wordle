@@ -1,0 +1,105 @@
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+  border-bottom: 1px solid #d3d6da;
+  margin-bottom: 30px;
+}
+.left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 70px;
+}
+
+.left a {
+  width: 30px;
+  height: 30px;
+}
+
+.left a img {
+  width: 100%;
+}
+
+.right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+
+.right a {
+  width: 30px;
+  height: 30px;
+}
+
+.right a img {
+  width: 100%;
+}
+/* main */
+.board-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  margin: 0 auto;
+  gap: 5px;
+  margin-bottom: 50px;
+}
+
+.board-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.board-column {
+  border: 2px solid #d3d6da;
+  width: 60px;
+  height: 60px;
+}
+
+.keyboard-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  margin: 0 auto;
+  gap: 5px;
+}
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 5px;
+}
+
+.key-block {
+  font-size: 1.25em;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #d3d6da;
+  /* flex: 1; */
+  border-radius: 4px;
+  height: 58px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+}
+.key-block.enter {
+  width: 80px;
+  font-size: 1em;
+}
+.key-block.back {
+  width: 50px;
+}
+.key-block img {
+  width: 60%;
+}
