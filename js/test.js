@@ -3,7 +3,23 @@ let index = 0;
 let timer;
 // const answer = 'APPLE';
 
-const options = ['APPLE', 'CONST', 'WORST', 'TABLE', 'TOAST', 'MOUSE', 'BONUS', 'CHECK', 'TASTE'];
+const options = [
+  'APPLE',
+  'CONST',
+  'WORST',
+  'TABLE',
+  'TOAST',
+  'MOUSE',
+  'BONUS',
+  'CHECK',
+  'TASTE',
+  'CHAIR',
+  'PLANT',
+  'LIGHT',
+  'POWER',
+  'GHOST',
+  'MUSIC',
+];
 // const options = ['APPLE', 'CONST'];
 function getRandom(num) {
   return Math.floor(Math.random() * num);
