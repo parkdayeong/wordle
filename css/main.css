@@ -39,6 +39,11 @@ header {
   width: 100%;
 }
 /* main */
+#timer {
+  font-size: 1.25em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
 .board-container {
   display: flex;
   flex-direction: column;
@@ -61,6 +66,11 @@ header {
   border: 2px solid #d3d6da;
   width: 60px;
   height: 60px;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 }
 
 .keyboard-container {
