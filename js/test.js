@@ -171,6 +171,7 @@ keyBoards.forEach((keyboardkey) => {
       // keyBoardHandler();
       console.log(data);
       keyBlock.innerHTML = data;
+      keyBlock.style.border = '2px solid black';
       index += 1;
     }
   });
