@@ -4,6 +4,7 @@ let timer;
 // const answer = 'APPLE';
 
 const options = ['APPLE', 'CONST', 'WORST', 'TABLE', 'TOAST', 'MOUSE', 'BONUS', 'CHECK', 'TASTE'];
+// const options = ['APPLE', 'CONST'];
 function getRandom(num) {
   return Math.floor(Math.random() * num);
 }
@@ -13,6 +14,7 @@ let answer = options[getRandom(options.length)];
 
 function backkeyHandler() {
   const deleteBlock = document.querySelector(`.board-column[data-index="${attempts}${index - 1}"]`);
+  console.log('back');
   if (index == 0) {
     return;
   }
@@ -39,7 +41,7 @@ function gameOverCorrect() {
 
 function gameOverWrong() {
   gameOver();
-  gameOverDiv.innerHTML = '실패하였습니다. ';
+  gameOverDiv.innerHTML = `실패하였습니다.<br> 정답은 : ${answer}입니다.`;
 }
 
 function goToNextLine() {
@@ -114,6 +116,7 @@ function enterKeyHandler() {
 function keyDownHandler(e) {
   // console.log(`키값: ${e.key},키코드:${e.keyCode}`);
   // a:65, z:90, Backspace:8, Enter:13, Escape:27, F5:116
+  let thisBlock = document.querySelector(`.board-column[data-index="${attempts}${index}"]`);
 
   if (!timer) {
     startTimer();
@@ -121,7 +124,6 @@ function keyDownHandler(e) {
 
   const key = e.key.toUpperCase();
   const keycode = e.keyCode;
-  let thisBlock = document.querySelector(`.board-column[data-index="${attempts}${index}"]`);
 
   if (e.keyCode === 8) {
     // console.log('backspace');
@@ -149,5 +151,29 @@ function startTimer() {
 
   timer = setInterval(setTime, 1000);
 }
+
+let keyBoards = document.querySelectorAll('.key-block');
+
+keyBoards.forEach((keyboardkey) => {
+  let data = keyboardkey.getAttribute('data-key');
+
+  keyboardkey.addEventListener('click', function (e) {
+    if (!timer) {
+      startTimer();
+    }
+    let keyBlock = document.querySelector(`.board-column[data-index="${attempts}${index}"]`);
+
+    if (data === 'ENTER') {
+      enterKeyHandler();
+    } else if (data === 'BACK') {
+      backkeyHandler();
+    } else {
+      // keyBoardHandler();
+      console.log(data);
+      keyBlock.innerHTML = data;
+      index += 1;
+    }
+  });
+});
 
 window.addEventListener('keydown', keyDownHandler);
